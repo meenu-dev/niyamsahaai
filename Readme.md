@@ -37,7 +37,11 @@ OPENAI API KEY = ------
 
 5. Run the following command to use the app
 ```bash
-streamlit run main.py
+python manage.py runserver
+```
+6. Run the following url in your browser
+```bash
+ http://127.0.0.1:8000/
 ```
 ## Tools & Technologies Used
 
