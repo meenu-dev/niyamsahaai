@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niyam SahaAI Chatbot</title>
+    <title>Law Glance Chatbot</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         html, body {
@@ -23,14 +23,44 @@
             background: linear-gradient(90deg, #255D6C, #00AF9A);
             color: white;
             padding: 15px 20px;
-            height: 80px;
+            height: 60px; /* Increased height to accommodate title and salutation */
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        .header-logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo-title img {
+            margin-right: 15px;
+        }
+
         .header h2 {
             margin: 0;
+        }
+
+        .header h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
         }
 
         .chat-box {
@@ -45,6 +75,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            border: 2px solid #1CB0B8;
         }
 
         .chat-log {
@@ -118,10 +149,12 @@
             background-color: #255D6C; /* Set the footer background color */
             color: white; /* Footer text color */
             text-align: center;
-            padding: 20px 0; /* Adjust padding to control inner space */
-            height: 60px; /* Explicitly set the footer height */
+            padding: 10px 0; /* Reduce padding to control inner space */
+            height: 90px; /* Reduced footer height */
             width: 100%; /* Full width of the page */
             font-family: 'Segoe UI', sans-serif; /* Font style for footer */
+            font-size: 14px; /* Smaller font for a more compact footer */
+            line-height: 1; /* Space between footer lines */
         }
 
         .footer a {
@@ -136,9 +169,19 @@
 </head>
 <body>
     <div class="header">
-        <h2>Niyam SahaAI</h2>
-        <img src="{% static 'images/logo.svg' %}" alt="Logo" style="height: 60px;">
+        <div class="header-logo-title">
+            <img src="{% static 'images/logo.svg' %}" alt="Logo" style="height: 60px;">
+            <div>
+                <h2>LawGlance</h2> <!-- Title next to logo -->
+                <h4>An AI Legal Assistant</h4> <!-- Salutation under title -->
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a> <!-- Home links to the current page -->
+            <a href="https://www.sci.gov.in/" target="_blank">Supreme Court</a> <!-- External link to the Supreme Court website -->
+        </div>
     </div>
+
     <div class="chat-box">
         <ul id="chat-log" class="chat-log"></ul>
         <div class="input-area">
@@ -151,6 +194,7 @@
     <div class="footer">
         <p>For any inquiries, feel free to <a href="mailto:contact@niyamsahaai.com">Contact Us</a>.</p>
         <p>View the project on <a href="https://github.com/niyam-sahaai/niyam-sahaai" target="_blank">GitHub</a>.</p>
+        <p><strong>Disclaimer:</strong> We will not process personal data.</p>
     </div>
 
     <script>
